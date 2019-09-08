@@ -1,44 +1,32 @@
-// import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import {createSwtichNavigator} from 'react-naviagtion';
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Hello World!</Text>
-//     </View>
-//   );
-// }
+import LoginScreen from './screens/LoginScreen';
+import DashboardScreen from './screens/DashboardScreen';
+import LoadingScreen from './screens/LoadingScreen';
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+export default class App extends React.Component {
+  render () {
+    return (
+      <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+      </View>
+    );
+  }
+}
 
-import React from "react";
-// import { View, Text } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomeScreen from "./screens/HomeScreen"
+const AppSwitchNavigator = createSwitchNavigator({
+  LoadingScreen:LoadingScreen,
+  LoginScreen:LoginScreen,
+  DashboardScreen:DashboardScreen
+})
 
-// class HomeScreen extends React.Component {
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//         <Text>Home Screen</Text>
-//       </View>
-//     );
-//   }
-// }
-
-const AppNavigator = createStackNavigator({
-  Home: { 
-    screen: HomeScreen
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
-
-const App = createAppContainer(AppNavigator)
-
-export default App;
