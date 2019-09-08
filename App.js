@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {createSwtichNavigator} from 'react-naviagtion';
+import {createSwitchNavigator} from 'react-navigation';
 
 import LoginScreen from './screens/LoginScreen';
 import DashboardScreen from './screens/DashboardScreen';
